@@ -143,6 +143,17 @@ home page - games
     font-weight: bold;
 }
 
+.hidden {
+    display: none;
+}
+.clickable {
+    cursor: pointer;
+}
+.clickable:hover {
+    border-color: 
+#f5a623;
+}
+
 /*--------------------
 players page - search
 ---------------------*/

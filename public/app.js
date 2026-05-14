@@ -57,12 +57,22 @@ async function loadRecentGames() {
         gamesGrid.innerHTML = '';
         games.reverse().forEach(game => {
             const card = document.createElement('div');
-            card.classList.add('game-card');
+            card.classList.add('game-card', 'clickable');
             card.innerHTML = `
                 <div class="teams">${game.home_team.abbreviation} vs ${game.visitor_team.abbreviation}</div>
                 <div class="score">${game.home_team_score} - ${game.visitor_team_score}</div>
                 <div class="status">${game.status}</div>
+                <div class="quarters hidden" id="quarters-${game.id}">
+                    <span>Q1: ${game.home_q1 || 0} - ${game.visitor_q1 || 0}</span>
+                    <span>Q2: ${game.home_q2 || 0} - ${game.visitor_q2 || 0}</span>
+                    <span>Q3: ${game.home_q3 || 0} - ${game.visitor_q3 || 0}</span>
+                    <span>Q4: ${game.home_q4 || 0} - ${game.visitor_q4 || 0}</span>
+                </div>
             `;
+            card.addEventListener('click', function () {
+                const quarters = document.getElementById(`quarters-${game.id}`);
+                quarters.classList.toggle('hidden');
+            });
             gamesGrid.appendChild(card);
         });
 
@@ -96,6 +106,7 @@ async function searchPlayers() {
         }
 
         playersGrid.innerHTML = '';
+        document.getElementById('clearBtn').style.display = 'block';
         players.forEach(player => {
             const card = document.createElement('div');
             card.classList.add('player-card');
@@ -317,6 +328,12 @@ async function removeFavorite(id, playerName) {
     }
 }
 
+// Players page - clears search bar
+function clearSearch() {
+    document.getElementById('searchInput').value = '';
+    document.getElementById('playersGrid').innerHTML = '';
+    document.getElementById('clearBtn').style.display = 'none';
+}
 
 // Run on page load
 window.onload = function () {
@@ -329,6 +346,7 @@ window.onload = function () {
         searchInput.addEventListener('input', function () {
             if (this.value.trim() === '') {
                 document.getElementById('playersGrid').innerHTML = '';
+                document.getElementById('clearBtn').style.display = 'none';
             }
         });
     }
