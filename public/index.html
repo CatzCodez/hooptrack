@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <title>HoopTrack - Home</title>
+        <link rel="stylesheet" href="style.css"/>
+    </head>
+    <body>
+        <header>
+            <h1>🏀 HoopTrack</h1>
+            <nav>
+                <a href="/">Home</a>
+                <a href="/players">Players</a>
+                <a href="/about">About</a>
+            </nav>
+        </header>
+
+        <div class="container">
+            <h2>Today's Games</h2>
+            <div id="todaysGames">
+                <p class="no-games">Loading today's games...</p>
+            </div>
+
+            <h2>Recent Games</h2>
+            <div class="games-grid" id="gamesGrid">
+                <p class="no-games">Loading recent games...</p>
+            </div>
+        </div>
+
+        <footer>
+            <p>HoopTrack &copy; 2026 | Data from BallDontLie API</p>
+        </footer>
+
+        <script src="app.js"></script>
+    </body>
+</html>

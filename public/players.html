@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HoopTrack - Players</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>
+</head>
+<body>
+
+    <header>
+        <h1>🏀 HoopTrack</h1>
+        <nav>
+            <a href="/">Home</a>
+            <a href="/players">Players</a>
+            <a href="/about">About</a>
+        </nav>
+    </header>
+
+    <div class="container">
+        <h2>Search Players</h2>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for a player...">
+            <button onclick="searchPlayers()">Search</button>
+        </div>
+
+        <div id="playersGrid"></div>
+
+        <div class="compare-section">
+            <h2>Compare Players</h2>
+            <div class="compare-slots">
+                <div class="compare-slot" id="slot1">
+                    <p class="no-games">No player selected</p>
+                </div>
+                <div class="compare-slot" id="slot2">
+                    <p class="no-games">No player selected</p>
+                </div>
+            </div>
+            <div id="compareChartContainer" style="display:none;">
+                <canvas id="compareChart"></canvas>
+            </div>
+        </div>
+
+        <div class="favorites-list">
+            <h2>My Favorite Players</h2>
+            <div id="favoritesList">
+                <p class="no-games">Loading favorites...</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>HoopTrack &copy; 2026 | Data from BallDontLie API</p>
+    </footer>
+
+    <script src="app.js"></script>
+
+</body>
+</html>
