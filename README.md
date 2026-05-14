@@ -12,14 +12,14 @@ HoopTrack is designed for desktop browsers. It has been tested and works on:
 ## Live Demo
 [https://hooptrack-beta.vercel.app](https://hooptrack-beta.vercel.app)
 
----
+
 
 ## Developer Manual
 
 ### Audience
 This document is intended for future developers who will take over and continue development of HoopTrack. It assumes general knowledge of web development and Node.js but no prior knowledge of this specific project.
 
----
+
 
 ### Installation
 
@@ -57,7 +57,7 @@ BALLDONTLIE_KEY=your_balldontlie_api_key
 
 5. Enable Row Level Security on the `favorites` table and add a policy that allows all operations for the `anon` role with `true` as both the USING and WITH CHECK expressions.
 
----
+
 
 ### Running the Application
 
@@ -68,7 +68,7 @@ node index.js
 
 The app will be available at `http://localhost:3000`.
 
----
+
 
 ### Running Tests
 There are currently no automated tests written for this project. Manual testing is recommended by visiting each page and verifying:
@@ -78,7 +78,7 @@ There are currently no automated tests written for this project. Manual testing 
 - Favorites can be added and removed
 - Compare chart renders when two players are selected
 
----
+
 
 ### API Endpoints
 
@@ -91,7 +91,7 @@ There are currently no automated tests written for this project. Manual testing 
 | POST | `/api/favorites` | Saves a new favorite player to Supabase |
 | DELETE | `/api/favorites/:id` | Removes a favorite player from Supabase by ID |
 
----
+
 
 ### Known Bugs
 - All users currently share the same favorites list since there is no user authentication. Future development should add login functionality so each user has their own favorites.
