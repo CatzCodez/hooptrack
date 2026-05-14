@@ -81,6 +81,7 @@ home page - games
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 20px;
     margin-bottom: 40px;
+    align-items: start;
 }
 
 .game-card {
