@@ -1,12 +1,14 @@
 const express = require('express');
 const supabaseClient = require('@supabase/supabase-js');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 dotenv.config();
 
 const app = express();
 const port = 3000;
 
+app.use(cors());
 app.use(express.json());
 app.use(express.static(__dirname + '/public'));
 
